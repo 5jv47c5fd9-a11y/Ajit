@@ -1,0 +1,16 @@
+{
+  "name": "outsight-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Outsight AI — Enterprise intelligence platform",
+  "workspaces": [
+    "backend",
+    "web",
+    "shared"
+  ],
+  "scripts": {
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:web": "npm --workspace web run dev",
+    "build": "npm --workspace backend run build && npm --workspace web run build"
+  }
+}

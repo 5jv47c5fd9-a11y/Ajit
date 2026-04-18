@@ -1,0 +1,98 @@
+:root {
+  --bg: #070b14;
+  --panel: #0f1524;
+  --panel-2: #111a2e;
+  --border: #1c2742;
+  --text: #e5ecf9;
+  --muted: #7f8aa3;
+  --accent: #4f8cff;
+  --accent-2: #7aa2ff;
+  --good: #3ddc97;
+  --warn: #f5a524;
+  --bad: #ef4444;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif; }
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { color: #fff; }
+
+.app-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 32px; border-bottom: 1px solid var(--border);
+  background: rgba(10,15,28,0.85); backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { font-size: 18px; letter-spacing: 0.4px; }
+.brand-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: linear-gradient(135deg, #4f8cff, #7aa2ff); margin-right: 8px;
+}
+nav a { margin-left: 18px; color: var(--muted); font-size: 14px; }
+nav a:hover { color: #fff; }
+
+main { padding: 28px 32px 56px; max-width: 1400px; margin: 0 auto; }
+.app-footer { padding: 24px 32px; color: var(--muted); font-size: 12px; text-align: center; }
+
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; margin-bottom: 16px;
+}
+.card h2 { margin: 0 0 12px; font-size: 16px; letter-spacing: 0.3px; color: #fff; }
+.card h3 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
+.muted { color: var(--muted); }
+
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+.input, .button, .select {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px; font-size: 14px;
+}
+.input { width: 100%; }
+.button { background: linear-gradient(135deg, #4f8cff, #7aa2ff); border: none; cursor: pointer; color: #04102a; font-weight: 600; }
+.button.secondary { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); }
+
+.score-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 6px 12px; font-size: 13px;
+}
+.score-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; margin-top: 8px; }
+.score-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--border); color: var(--muted); margin-right: 6px; }
+.tag.good { color: var(--good); border-color: rgba(61,220,151,0.3); }
+.tag.warn { color: var(--warn); border-color: rgba(245,165,36,0.3); }
+.tag.bad { color: var(--bad); border-color: rgba(239,68,68,0.3); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; }
+ul.clean li { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+ul.clean li:last-child { border-bottom: none; }
+
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th, table.data td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+table.data th { color: var(--muted); font-weight: 500; }
+
+.heatmap { display: grid; gap: 4px; }
+.heatmap-cell {
+  padding: 10px; border-radius: 6px; font-size: 11px;
+  color: #0b1221; font-weight: 600;
+}
+
+.toggle { display: inline-flex; gap: 8px; align-items: center; cursor: pointer; user-select: none; }
+.toggle input { accent-color: var(--accent); }
+
+.hero {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 36px 28px;
+  background: radial-gradient(ellipse at top, rgba(79,140,255,0.12), transparent 60%), var(--panel);
+  border: 1px solid var(--border); border-radius: 18px; margin-bottom: 20px;
+}
+.hero h1 { margin: 0; font-size: 28px; letter-spacing: -0.3px; }
+.hero p { margin: 0; color: var(--muted); max-width: 680px; }
+.search-row { display: flex; gap: 10px; margin-top: 8px; }

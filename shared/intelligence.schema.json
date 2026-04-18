@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OutsightIntelligencePayload",
+  "type": "object",
+  "required": [
+    "company_summary",
+    "competitors",
+    "outsourcing_partners",
+    "vendor_opportunities",
+    "vendor_threats",
+    "automation_readiness_score",
+    "ai_adoption_probability",
+    "vendor_win_probability",
+    "deal_probability_prediction",
+    "strategic_horizon",
+    "latest_news",
+    "outsourcing_signals",
+    "automation_risk_signals",
+    "cost_optimization_signals",
+    "technology_stack_indicators",
+    "hiring_signals",
+    "geographic_strategy_signals",
+    "vendor_penetration_heatmap",
+    "industry_benchmark_score",
+    "predictive_outsourcing_forecast",
+    "recommended_vendor_strategy",
+    "executive_summary"
+  ],
+  "properties": {
+    "company_summary": { "type": "string" },
+    "competitors": {
+      "type": "object",
+      "required": ["direct", "indirect"],
+      "properties": {
+        "direct": { "type": "array", "items": { "type": "string" } },
+        "indirect": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "outsourcing_partners": { "type": "array", "items": { "type": "string" } },
+    "vendor_opportunities": { "type": "array", "items": { "type": "string" } },
+    "vendor_threats": { "type": "array", "items": { "type": "string" } },
+    "automation_readiness_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "ai_adoption_probability": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "vendor_win_probability": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "outsourcing_expansion_likelihood": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "vendor_displacement_risk": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "deal_probability_prediction": {
+      "type": "object",
+      "required": ["probability_3_months", "probability_6_months", "probability_12_months"],
+      "properties": {
+        "probability_3_months": { "type": "integer" },
+        "probability_6_months": { "type": "integer" },
+        "probability_12_months": { "type": "integer" },
+        "influencing_factors": { "type": "array" }
+      }
+    },
+    "strategic_horizon": { "type": "string" },
+    "latest_news": { "type": "object" },
+    "outsourcing_signals": { "type": "array", "items": { "type": "string" } },
+    "automation_risk_signals": { "type": "array", "items": { "type": "string" } },
+    "cost_optimization_signals": { "type": "array", "items": { "type": "string" } },
+    "technology_stack_indicators": { "type": "array", "items": { "type": "string" } },
+    "hiring_signals": { "type": "array", "items": { "type": "string" } },
+    "geographic_strategy_signals": { "type": "array", "items": { "type": "string" } },
+    "vendor_penetration_heatmap": { "type": "object" },
+    "industry_benchmark_score": { "type": "object" },
+    "predictive_outsourcing_forecast": { "type": "array" },
+    "recommended_vendor_strategy": {
+      "type": "object",
+      "required": ["if_already_vendor", "if_not_currently_vendor"],
+      "properties": {
+        "if_already_vendor": { "type": "string" },
+        "if_not_currently_vendor": { "type": "string" }
+      }
+    },
+    "executive_summary": { "type": "string" },
+    "digital_transformation_indicators": { "type": "array", "items": { "type": "string" } },
+    "cx_outsourcing_maturity": { "type": "string", "enum": ["none", "emerging", "mature", "advanced"] },
+    "vendor_replacement_risk_indicators": { "type": "array", "items": { "type": "string" } }
+  }
+}
