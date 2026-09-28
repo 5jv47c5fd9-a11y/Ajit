@@ -16,6 +16,7 @@ deal probability, vendor penetration heatmap, forecasts, benchmarks, and alerts.
 /android    Kotlin + Jetpack Compose application
 /shared     Shared JSON schemas and sample preview dataset
 /docs       Architecture and API reference
+/avatar     Talking photo-real 3D avatar for ajit.business (static, see avatar/README.md)
 ```
 
 ## Core Capabilities (v1)

@@ -1,0 +1,4 @@
+# MediaPipe models, downloaded by build_avatar_assets.py on first run
+*.task
+*.tflite
+__pycache__/
